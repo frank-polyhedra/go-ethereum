@@ -1250,7 +1250,7 @@ func kZGToVersionedHash(kzg kzg4844.Commitment) common.Hash {
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-type gnarkInputs struct {
+type GnarkInputs struct {
 	CurveID   ecc.ID `json:"curve_id"`
 	Proof     []byte `json:"proof"`
 	VerifyKey []byte `json:"verify_key"`
@@ -1266,7 +1266,7 @@ func (b *gnarkGroth16Verify) RequiredGas(input []byte) uint64 {
 }
 
 func (c *gnarkGroth16Verify) Run(input []byte) ([]byte, error) {
-	var gi gnarkInputs
+	var gi GnarkInputs
 	err := json.Unmarshal(input, &gi)
 	if nil != err {
 		return nil, err
@@ -1301,7 +1301,7 @@ func (b *gnarkPlonkVerify) RequiredGas(input []byte) uint64 {
 }
 
 func (c *gnarkPlonkVerify) Run(input []byte) ([]byte, error) {
-	var gi gnarkInputs
+	var gi GnarkInputs
 	err := json.Unmarshal(input, &gi)
 	if nil != err {
 		return nil, err
