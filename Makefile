@@ -10,6 +10,7 @@ GORUN = go run
 
 #? geth: Build geth.
 geth:
+	cargo build --release
 	$(GORUN) build/ci.go install ./cmd/geth
 	@echo "Done building."
 	@echo "Run \"$(GOBIN)/geth\" to launch geth."
