@@ -40,6 +40,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/bn256"
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereum/go-ethereum/precompiles"
 	"golang.org/x/crypto/ripemd160"
 )
 
@@ -61,6 +62,9 @@ var PrecompiledContractsHomestead = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 // PrecompiledContractsByzantium contains the default set of pre-compiled Ethereum
@@ -77,6 +81,9 @@ var PrecompiledContractsByzantium = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 // PrecompiledContractsIstanbul contains the default set of pre-compiled Ethereum
@@ -94,6 +101,9 @@ var PrecompiledContractsIstanbul = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 // PrecompiledContractsBerlin contains the default set of pre-compiled Ethereum
@@ -111,6 +121,9 @@ var PrecompiledContractsBerlin = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 // PrecompiledContractsCancun contains the default set of pre-compiled Ethereum
@@ -129,6 +142,9 @@ var PrecompiledContractsCancun = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 // PrecompiledContractsPrague contains the set of pre-compiled Ethereum
@@ -156,6 +172,9 @@ var PrecompiledContractsPrague = map[common.Address]PrecompiledContract{
 
 	common.BytesToAddress([]byte{0xff, 0x00}): &gnarkGroth16Verify{},
 	common.BytesToAddress([]byte{0xff, 0x01}): &gnarkPlonkVerify{},
+
+	common.BytesToAddress([]byte{0xff, 0x02}): &precompiles.Anonymous{},
+	common.BytesToAddress([]byte{0xff, 0x03}): &precompiles.Anemoi{},
 }
 
 var PrecompiledContractsBLS = PrecompiledContractsPrague
