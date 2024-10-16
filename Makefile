@@ -17,7 +17,7 @@ geth:
 
 #? all: Build all packages and executables.
 all:
-    cargo build --release
+	cargo build --release
 	$(GORUN) build/ci.go install
 
 #? test: Run the tests.
